@@ -1,0 +1,24 @@
+plugins {
+    id 'application'
+    id 'org.graalvm.buildtools.native' version '0.9.16'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+}
+
+application {
+    mainClass = 'test.Main'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+graalvmNative {
+    toolchainDetection = false
+}
